@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_screen_shape"
+    tools:context=".NoteDetailFragment">
+
+    <ImageButton
+        android:id="@+id/ibdetailtarrow"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="53dp"
+        android:background="@drawable/search_shape"
+        android:src="@drawable/arrow_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibdetailvisibility"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="96dp"
+        android:background="@drawable/search_shape"
+        android:src="@drawable/visibility"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibdetailsave"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/search_shape"
+        android:src="@drawable/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibdetailedit"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/search_shape"
+        android:src="@drawable/edit_24"
+       app:layout_constraintStart_toEndOf="@id/ibdetailtarrow"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="12dp"/>
+
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ibdetailtarrow">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <!--Bashliq-->
+
+            <TextView
+                android:id="@+id/tvdetailNoteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Note Title"
+                android:textColor="@color/white"
+                android:layout_marginTop="40dp"
+                android:layout_marginHorizontal="24dp"
+                android:textSize="28sp"
+                android:paddingHorizontal="15dp"/>
+
+            <EditText
+                android:id="@+id/etdetailNoteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginHorizontal="24dp"
+                android:backgroundTint="@color/dark_gray"
+                android:fontFamily="@font/nunito"
+                android:hint="Title"
+                android:inputType="textCapSentences"
+                android:paddingHorizontal="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/medium_gray"
+                android:textSize="28sp"
+                android:visibility="gone" />
+
+
+            <!--Məzmun-->
+
+
+            <TextView
+                android:id="@+id/tvdetailNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Note"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginVertical="24dp"
+                android:padding="16dp"
+                />
+
+            <EditText
+                android:id="@+id/etdetailNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="24dp"
+                android:backgroundTint="@color/dark_gray"
+                android:fontFamily="@font/nunito"
+                android:gravity="top|start"
+                android:hint="Type something..."
+                android:inputType="textMultiLine"
+                android:minLines="8"
+                android:overScrollMode="always"
+                android:padding="16dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/medium_gray"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_screen_shape"
+    tools:context=".HomeFragment">
+
+    <TextView
+        android:id="@+id/tvNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="45dp"
+        android:text="@string/notes"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vwSearch"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="260dp"
+        android:background="@drawable/search_shape"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvNotes" />
+
+    <ImageButton
+        android:id="@+id/imgBtnSearch"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="12dp"
+        android:background="@color/mid_gray"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/search_24"
+        app:layout_constraintStart_toStartOf="@id/vwSearch"
+        app:layout_constraintTop_toTopOf="@id/vwSearch"
+        app:tint="@color/white" />
+
+    <View
+        android:id="@+id/vwinfo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/search_shape"
+        app:layout_constraintStart_toEndOf="@id/vwSearch"
+        app:layout_constraintTop_toTopOf="@+id/tvNotes" />
+
+    <ImageButton
+        android:id="@+id/imgBtninfo"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="12dp"
+        android:background="@color/mid_gray"
+        android:contentDescription="@string/todon"
+        android:src="@drawable/info_24"
+        app:layout_constraintStart_toStartOf="@id/vwinfo"
+        app:layout_constraintTop_toTopOf="@id/vwinfo"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/ivphotohome"
+        android:layout_width="350dp"
+        android:layout_height="285dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="280dp"
+        android:contentDescription="@string/todos"
+        android:src="@drawable/rafiki"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="7dp"
+        android:fontFamily="@font/nunito"
+        android:text="@string/create_your_first_note"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivphotohome" />
+
+
+    <LinearLayout
+        android:id="@+id/emptySearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="top|center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/cardviewAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNotes"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <LinearLayout
+            android:id="@+id/lnrlytFileNot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ivFileNot"
+            android:layout_width="358dp"
+            android:layout_height="181dp"
+            android:layout_marginTop="150dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/cuate" />
+
+        <TextView
+            android:id="@+id/tvFileNot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/file_not_found_try_searching_again"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="20dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/empetynote_shape"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvNotes"
+        android:visibility="gone"
+        >
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search..."
+            android:textColorHint="#CCCCCC"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="38dp"
+            android:background="@drawable/empetynote_shape"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+
+            android:ellipsize="none"/>
+
+        <ImageButton
+            android:id="@+id/ibbasalineclose"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="20dp"
+            android:background="#3B3B3B"
+            android:contentDescription="@string/todob"
+            android:paddingHorizontal="1dp"
+            android:src="@drawable/baseline_close_24" />
+
+    </FrameLayout>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNotes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tvNotes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_note"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardviewAdd"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="50dp"
+        android:elevation="50dp"
+        app:cardBackgroundColor="#252525"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnAdd"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="11dp"
+            android:background="#252525"
+            android:contentDescription="@string/todoe"
+            android:src="@drawable/add_24"
+            app:tint="@color/white" />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
